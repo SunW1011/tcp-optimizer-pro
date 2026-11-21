@@ -1,3 +1,10 @@
+## TCP Optimizer Pro v1.9.4
+
+- Fix mobile radio cache field splitting on Android mksh and support non-negative eSIM slot indices.
+- Warm up ICMP before idle measurements. Keep live HTTP streams across ICMP windows, timestamp echoes first, retain qualifying samples at EOF or the byte cap, and aggregate samples across fallback downloads.
+- Use Cloudflare HTTP load endpoints with a 64 MiB cap, 4.8-second load limit, and 7.5-second total limit. Require enough bytes and valid replies before grading.
+- Preserve idle ping tiles during Bufferbloat tests and display the correct jitter and loss units for missing values.
+
 ## TCP Optimizer Pro v1.9.3
 
 - On-demand Bufferbloat measurement compares idle ICMP RTT with ICMP during a bounded HTTP download. It reports loaded jitter and packet loss and withholds the grade when the download is insufficient.

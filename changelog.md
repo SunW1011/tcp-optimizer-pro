@@ -1,27 +1,45 @@
+## TCP Optimizer Pro v1.9.2
+
+- Export settings and app rules to a timestamped JSON backup in `/sdcard/Download`. Import replaces the saved settings and rules after daemon schema validation, using the existing atomic commit and kernel readback paths.
+- Probe DoT with a bounded TLS ClientHello on TCP/853. Include SNI for DNS names and report ServerHello, HelloRetryRequest, or TLS Alert. The probe stops before certificate verification.
+- Support callback and legacy synchronous WebUI bridges. Honor disable and removal markers at startup, and preserve the recovery journal if uninstall cannot verify restoration.
+
 ## TCP Optimizer Pro v1.9.1
 
-- Hiển thị đủ thống kê độ trễ khi chọn Chỉ Gateway.
-- Phân biệt cấu hình mạng chưa kích hoạt và hàng đợi MQ do driver quản lý đã được xác nhận.
-- Dùng số liệu RAM từ trạng thái daemon trong phần Lưu ý sử dụng.
+- Gateway-only latency probe now computes Jitter, Packet Loss, and first/min-max RTT directly from the Gateway ICMP batch.
+- Replaced `Unknown + Unknown` readback labels on inactive network paths with clear status text (`Inactive (Wi-Fi active)` / `Inactive (Mobile active)`).
+- Updated the Home Wi-Fi and Mobile cards to display a clear confirmed driver-managed MQ state instead of a pending warning.
+- Fixed the detail modal usage note to display the real device RAM from `status.json`.
+- Cleaned Python `__pycache__` artifacts from the source repository package.
 
 ## TCP Optimizer Pro v1.9.0
 
-- Mở chẩn đoán Wi-Fi từ thẻ Trang chủ và xem trạng thái DNS riêng tư.
-- Chọn đích đo độ trễ hoặc kiểm tra TCP/853 theo yêu cầu.
-- Thu gọn chẩn đoán tuyến mạng, trạng thái xác nhận kernel và dòng ưu tiên ứng dụng.
+- Enabled tapping the Home Wi-Fi card directly to open the Wi-Fi diagnostics popup.
+- Added selectable and custom public Ping targets (`1.1.1.1`, `8.8.8.8`, `9.9.9.9`, `Gateway only`, or custom host/IP) bound to the active egress interface.
+- Added read-only Private DNS status display and an on-demand DoT (TCP/853) connectivity check.
+- Redesigned Network Route Diagnostics (collapsible secondary interfaces) and the Kernel Verification card in Bento style; fixed label wrapping in Settings and Apps tabs.
+- Synchronized version metadata across daemon and WebUI, removing legacy fallback version strings.
 
-# TCP Optimizer Pro v1.8.1
+## TCP Optimizer Pro v1.8.1
 
-- Header WebUI hiển thị phiên bản đọc từ trạng thái daemon.
-- Hộp thoại TCP + Qdisc giải thích thuật toán và hàng đợi thực tế khi chọn Auto.
-- Chọn chế độ CAKE Diffserv bằng nhóm nút theo màu giao diện Bento.
+- WebUI header now displays the live version read from daemon status.
+- TCP + Qdisc modal explains the resolved algorithm and queue discipline when set to Auto.
+- Replaced the CAKE Diffserv dropdown with a Bento-styled segmented button group.
 
-# TCP Optimizer Pro v1.8.0
+## TCP Optimizer Pro v1.8.0
 
-- Lease Wi-Fi tùy chọn cho chế độ Chơi game. Hai lease TCP tùy chọn cho Chơi game và Tốc độ tối đa. Module kiểm tra màn hình và nhiệt pin khi giữ lease, rồi khôi phục giá trị trong journal nếu điều kiện thay đổi.
-- Tùy chọn initcwnd/initrwnd xác minh và ghi riêng tuyến mặc định IPv4 và IPv6 trên giao diện egress hiện tại. Các tuyến CLAT khác giao diện và tuyến không xác định duy nhất được bỏ qua.
-- Danh sách Qdisc nhận PIE và FQ-PIE khi kernel báo hỗ trợ. Tham số nâng cao tùy chọn gồm quantum theo MTU cho FQ/FQ-CoDel và Diffserv cho CAKE trong các chế độ chọn tay.
-- Popup Wi-Fi hiển thị Power Save thực tế, trạng thái lease, độ rộng kênh, tần số, băng tần và mã vùng do driver cung cấp.
-- Thêm metadata OTA KernelSU Next và workflow tạo GitHub Release từ tag đã qua kiểm thử.
+- Added optional Wi-Fi Power Save lease for Gaming mode and two optional TCP leases (autocorking and slow-start-after-idle) for Gaming and Max Speed modes, guarded by screen state and battery temperature with automatic journal restore.
+- Extended optional `initcwnd`/`initrwnd` route tuning to verify and apply independently to both IPv4 and IPv6 default routes on the active egress interface while skipping cross-interface CLAT and ambiguous routes.
+- Added PIE and FQ-PIE detection when supported by the kernel, plus optional MTU-based quantum for FQ/FQ-CoDel and Diffserv modes for CAKE in manual configurations.
+- Expanded Wi-Fi diagnostics popup with live Power Save state, active lease status, channel width, frequency, band, and driver-reported country code.
+- Added KernelSU Next OTA metadata and automated GitHub Release workflow for verified tags.
+- New installations disable leases, route windows, and advanced Qdisc options by default; upgrades preserve existing user settings.
 
-Cấu hình mới mặc định tắt các lease, cửa sổ tuyến và tham số Qdisc nâng cao. Nâng cấp giữ cấu hình người dùng đã lưu.
+## TCP Optimizer Pro v1.7.0
+
+- Universal Zero-Hardcode upgrade: dynamically probes 100% of hardware, TCP, and Qdisc capabilities from the kernel with automatic CC-aware priority chains (`BBR -> fq`, non-BBR `-> fq_codel`).
+- Added multi-platform cellular and VPN interface detection, handover debounce protection, first/min-max RTT metrics, and a copy-logs button in WebUI.
+
+## TCP Optimizer Pro v1.6.1
+
+- Stable v1.6.1 release featuring ARM64 16 KiB ELF alignment, pure C11 Netlink daemon, TSO `errno=16` fix, WebView diagnostics export fix, and VI/EN UI refinements.

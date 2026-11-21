@@ -1,3 +1,9 @@
+## TCP Optimizer Pro v1.9.1
+
+- Hiển thị đủ thống kê độ trễ khi chọn Chỉ Gateway.
+- Phân biệt cấu hình mạng chưa kích hoạt và hàng đợi MQ do driver quản lý đã được xác nhận.
+- Dùng số liệu RAM từ trạng thái daemon trong phần Lưu ý sử dụng.
+
 ## TCP Optimizer Pro v1.9.0
 
 - Mở chẩn đoán Wi-Fi từ thẻ Trang chủ và xem trạng thái DNS riêng tư.

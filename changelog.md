@@ -1,3 +1,9 @@
+## TCP Optimizer Pro v1.9.0
+
+- Mở chẩn đoán Wi-Fi từ thẻ Trang chủ và xem trạng thái DNS riêng tư.
+- Chọn đích đo độ trễ hoặc kiểm tra TCP/853 theo yêu cầu.
+- Thu gọn chẩn đoán tuyến mạng, trạng thái xác nhận kernel và dòng ưu tiên ứng dụng.
+
 # TCP Optimizer Pro v1.8.1
 
 - Header WebUI hiển thị phiên bản đọc từ trạng thái daemon.

@@ -1,3 +1,9 @@
+## TCP Optimizer Pro v1.9.3
+
+- On-demand Bufferbloat measurement compares idle ICMP RTT with ICMP during a bounded HTTP download. It reports loaded jitter and packet loss and withholds the grade when the download is insufficient.
+- Home keeps the last two measurements for an A/B comparison with their TCP algorithm, qdisc, and operating mode.
+- On-demand mobile refresh reads the active data SIM, LTE/5G display state, and RSRP from the matching live phone block. Mobile labels omit missing signal values and latency units stay attached to their numbers.
+
 ## TCP Optimizer Pro v1.9.2
 
 - Export settings and app rules to a timestamped JSON backup in `/sdcard/Download`. Import replaces the saved settings and rules after daemon schema validation, using the existing atomic commit and kernel readback paths.

@@ -1,3 +1,12 @@
+## TCP Optimizer Pro v2.0.0
+
+- Leave Wi-Fi power saving with Android and migrate legacy ownership once. F16 is an opt-in gaming lease that requires driver readback and is quarantined on the interface after failure.
+- Isolate secondary Wi-Fi events. Use a one-shot handover timer and apply the route window once per settled route and preset. When Wi-Fi frequency is available, 2.4 GHz uses 10/20. Other or unknown bands keep the configured preset.
+- Resolve concurrent top-app processes by explicit rule priority and hold gaming through an unruled overlay for up to five seconds.
+- While the UI or a lease is active, suspend low-latency leases on persistent weak signal or kernel loss. Recovery requires four seconds of clean samples. Link drop counters are per interface and TCP retransmit counters are per network namespace.
+- Use five idle ICMP probes and the median for Bufferbloat. Withhold the grade if loaded RTT is more than 15 ms below the idle baseline.
+- Publish thermal, TSQ, link and lease state for the WebUI and show Bufferbloat grade in the result grid. Boot Qdisc priming can be disabled independently.
+
 ## TCP Optimizer Pro v1.9.4
 
 - Fix mobile radio cache field splitting on Android mksh and support non-negative eSIM slot indices.

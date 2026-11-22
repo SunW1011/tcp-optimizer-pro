@@ -1,3 +1,11 @@
+## TCP Optimizer Pro v2.1.0
+
+- Discover TCP congestion control and policy sysctls at startup. Publish capability masks, keep unsupported policy nodes untouched and use FQ-CoDel as the explicit FQ fallback.
+- Recognize Unisoc and Exynos mobile links, exclude CLAT/VPN from physical tuning, omit local addresses from mobile gateway readback and recognize additional battery, skin and OLED panel sources.
+- Recognize legacy and current Android subscription records, including single-SIM live registry output, and use a scoped Wi-Fi framework fallback.
+- Verify a complete TLS handshake, system CA trust and the hostname before switching to a named Private DNS provider. The system choice restores Android opportunistic mode. Devices with an unavailable TLS ABI keep their existing settings.
+- Add an eight-layer read-only compatibility score and allowlisted diagnostic export. Reports omit subscriber, address, Wi-Fi and app identifiers. Root backend and page-size readback report available evidence from the device.
+
 ## TCP Optimizer Pro v2.0.2
 
 - Read the associated AP from the kernel BSS cache and preserve valid RSSI when a driver reports its own MAC in a station dump.

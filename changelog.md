@@ -1,3 +1,9 @@
+## TCP Optimizer Pro v2.1.1
+
+- Use the shared bottom sheet for every WebUI select menu, including ping targets, Private DNS, TCP retries and route windows.
+- Keep option descriptions, chosen labels and disabled states synchronized on all themes in English and Vietnamese.
+- Close the sheet with the close button, backdrop or Escape and restore page scrolling.
+
 ## TCP Optimizer Pro v2.1.0
 
 - Discover TCP congestion control and policy sysctls at startup. Publish capability masks, keep unsupported policy nodes untouched and use FQ-CoDel as the explicit FQ fallback.

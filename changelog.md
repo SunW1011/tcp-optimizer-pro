@@ -1,3 +1,9 @@
+## TCP Optimizer Pro v2.0.2
+
+- Read the associated AP from the kernel BSS cache and preserve valid RSSI when a driver reports its own MAC in a station dump.
+- Keep in-flight apply and resume requests through concurrent control events and expire abandoned work on a one-shot deadline.
+- Correct paused profile labels, advanced Qdisc availability, verification age and recommended profile feedback.
+
 ## TCP Optimizer Pro v2.0.1
 
 - Read the connected AP BSSID from station replies and retain Wi-Fi identity when the telemetry cache expires on the same association.

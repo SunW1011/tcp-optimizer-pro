@@ -1,3 +1,9 @@
+## TCP Optimizer Pro v2.0.1
+
+- Read the connected AP BSSID from station replies and retain Wi-Fi identity when the telemetry cache expires on the same association.
+- Display Bufferbloat delta from the rounded RTT values while preserving the measured grade.
+- Show one thermal status dot next to the battery temperature and reuse Home kernel readback for standby mobile routes in Settings.
+
 ## TCP Optimizer Pro v2.0.0
 
 - Leave Wi-Fi power saving with Android and migrate legacy ownership once. F16 is an opt-in gaming lease that requires driver readback and is quarantined on the interface after failure.

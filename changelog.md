@@ -1,5 +1,22 @@
 # Changelog
 
+## v2.2.1
+
+### Fixed
+
+- Kept Light selected in the WebUI when the host WebView prefers dark colors.
+- Enabled TCP low-latency leases when Auto selects Gaming or Fast Download. Kept screen, temperature, route and signal checks in force. A new Wi-Fi power-saving lease still requires the WebUI to be open.
+- Continued sampling after Signal Guard releases a lease and read TCP retransmit counters from the kernel so a strong link can recover.
+- Included restore, resume and reapply events in the Apply log filter.
+- Wrapped long RTT ranges within the latency card. Saved a temperature slider change on release and combined repeated step-button taps into one save.
+- Cleared quick-profile highlights while optimization is paused or the original settings are restored.
+
+### Changed
+
+- Grouped mobile radio readings in one row, omitted missing Wi-Fi region codes and added a hint when Wi-Fi diagnostics can be opened.
+- Put preferred TCP and Qdisc entries first in the kernel dictionary and clarified the Lowat and initial TCP window descriptions.
+- Shortened app hints and used consistent mode names across the WebUI.
+
 ## v2.2.0
 
 ### Added

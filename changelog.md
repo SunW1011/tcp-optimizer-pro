@@ -1,5 +1,28 @@
 # Changelog
 
+## v2.2.0
+
+### Added
+
+- Added Maximum speed, Gaming / Low latency, and Balanced & battery saving quick profiles with confirmation and active-profile indicators.
+- Exposed TCP autocorking, compressed SACK delay, the established TCP retry limit, and ECN fallback in the live sysctl list.
+
+### Changed
+
+- Ordered Auto TCP selection as BBRv3, BBRv2, BBR, CUBIC, Westwood, H-TCP and Reno. Auto Qdisc continues to prefer FQ for BBR and FQ-CoDel for other TCP algorithms.
+- Grouped related settings and collapsed the advanced settings and kernel dictionary by default.
+- Rewrote the kernel dictionary with parameter-specific descriptions, roles and readable units. Added Escape dismissal and focus restoration to the detail sheet.
+- Moved Private DNS into its own card, showed Bufferbloat grade and loss with status colors, and added a prompt for the second A/B measurement.
+- Simplified app mode choices and compacted the activity log.
+
+### Fixed
+
+- Handled IPv6 zone identifiers in local DNS addresses without throwing an error.
+- Showed fixed TSQ and Lowat limits for apps with a manual mode.
+- Showed the kernel-reported retry value next to the default option and rendered disabled CAKE choices in neutral colors.
+- Reported the reboot needed to recreate FQ MQ queues only when boot priming is enabled.
+- Reported TSQ ownership backoff as an informational state and kept subsequent settings reads on the same WebUI module instance.
+
 ## v2.1.2
 
 ### Fixed

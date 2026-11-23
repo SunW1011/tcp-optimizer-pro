@@ -1,93 +1,165 @@
-## TCP Optimizer Pro v2.1.1
+# Changelog
 
-- Use the shared bottom sheet for every WebUI select menu, including ping targets, Private DNS, TCP retries and route windows.
-- Keep option descriptions, chosen labels and disabled states synchronized on all themes in English and Vietnamese.
-- Close the sheet with the close button, backdrop or Escape and restore page scrolling.
+## v2.1.2
 
-## TCP Optimizer Pro v2.1.0
+### Fixed
 
-- Discover TCP congestion control and policy sysctls at startup. Publish capability masks, keep unsupported policy nodes untouched and use FQ-CoDel as the explicit FQ fallback.
-- Recognize Unisoc and Exynos mobile links, exclude CLAT/VPN from physical tuning, omit local addresses from mobile gateway readback and recognize additional battery, skin and OLED panel sources.
-- Recognize legacy and current Android subscription records, including single-SIM live registry output, and use a scoped Wi-Fi framework fallback.
-- Verify a complete TLS handshake, system CA trust and the hostname before switching to a named Private DNS provider. The system choice restores Android opportunistic mode. Devices with an unavailable TLS ABI keep their existing settings.
-- Add an eight-layer read-only compatibility score and allowlisted diagnostic export. Reports omit subscriber, address, Wi-Fi and app identifiers. Root backend and page-size readback report available evidence from the device.
+- Reported driver-managed MQ with existing pfifo_fast queues as waiting for a reboot when FQ is already the kernel default. Suppressed the partial-apply toast for that state and reported unsupported manual queue changes separately.
+- Refreshed missing mobile radio data when Home first opens on mobile or switches to mobile through an offline state, with a 15-second cooldown.
+- Capped the Bufferbloat grade based on packet loss during load.
+- Labeled each A/B measurement with its network type and limited deltas to measurements on the same network type.
+- Skipped the DoT probe on TCP/853 when automatic DNS uses a local resolver address.
+- Omitted unknown Wi-Fi generations from the connection title and synchronized the title with the primary route during handover.
+- Kept all six Bufferbloat cells visible during a repeat test and set a 44 px minimum touch target for the TCP retries picker.
 
-## TCP Optimizer Pro v2.0.2
+## v2.1.1
 
-- Read the associated AP from the kernel BSS cache and preserve valid RSSI when a driver reports its own MAC in a station dump.
-- Keep in-flight apply and resume requests through concurrent control events and expire abandoned work on a one-shot deadline.
-- Correct paused profile labels, advanced Qdisc availability, verification age and recommended profile feedback.
+### Changed
 
-## TCP Optimizer Pro v2.0.1
+- Moved all WebUI select menus to the shared bottom sheet, including ping targets, Private DNS, TCP retries and route windows.
+- Matched option descriptions, selected labels and disabled states across themes in English and Vietnamese.
 
-- Read the connected AP BSSID from station replies and retain Wi-Fi identity when the telemetry cache expires on the same association.
-- Display Bufferbloat delta from the rounded RTT values while preserving the measured grade.
-- Show one thermal status dot next to the battery temperature and reuse Home kernel readback for standby mobile routes in Settings.
+### Fixed
 
-## TCP Optimizer Pro v2.0.0
+- Restored page scrolling after closing the picker with the close button, the backdrop or Escape.
 
-- Leave Wi-Fi power saving with Android and migrate legacy ownership once. F16 is an opt-in gaming lease that requires driver readback and is quarantined on the interface after failure.
-- Isolate secondary Wi-Fi events. Use a one-shot handover timer and apply the route window once per settled route and preset. When Wi-Fi frequency is available, 2.4 GHz uses 10/20. Other or unknown bands keep the configured preset.
-- Resolve concurrent top-app processes by explicit rule priority and hold gaming through an unruled overlay for up to five seconds.
-- While the UI or a lease is active, suspend low-latency leases on persistent weak signal or kernel loss. Recovery requires four seconds of clean samples. Link drop counters are per interface and TCP retransmit counters are per network namespace.
-- Use five idle ICMP probes and the median for Bufferbloat. Withhold the grade if loaded RTT is more than 15 ms below the idle baseline.
-- Publish thermal, TSQ, link and lease state for the WebUI and show Bufferbloat grade in the result grid. Boot Qdisc priming can be disabled independently.
+## v2.1.0
 
-## TCP Optimizer Pro v1.9.4
+### Added
 
-- Fix mobile radio cache field splitting on Android mksh and support non-negative eSIM slot indices.
-- Warm up ICMP before idle measurements. Keep live HTTP streams across ICMP windows, timestamp echoes first, retain qualifying samples at EOF or the byte cap, and aggregate samples across fallback downloads.
-- Use Cloudflare HTTP load endpoints with a 64 MiB cap, 4.8-second load limit, and 7.5-second total limit. Require enough bytes and valid replies before grading.
-- Preserve idle ping tiles during Bufferbloat tests and display the correct jitter and loss units for missing values.
+- Added an eight-layer compatibility report and a read-only diagnostic export that omits subscriber, address, Wi-Fi and app identifiers. The report includes available root backend and page-size information.
+- Added detection for Unisoc and Exynos mobile interfaces, additional battery and skin sensors, and OLED panel states.
 
-## TCP Optimizer Pro v1.9.3
+### Changed
 
-- On-demand Bufferbloat measurement compares idle ICMP RTT with ICMP during a bounded HTTP download. It reports loaded jitter and packet loss and withholds the grade when the download is insufficient.
-- Home keeps the last two measurements for an A/B comparison with their TCP algorithm, qdisc, and operating mode.
-- On-demand mobile refresh reads the active data SIM, LTE/5G display state, and RSRP from the matching live phone block. Mobile labels omit missing signal values and latency units stay attached to their numbers.
+- Detected TCP congestion control and policy sysctls at startup, reported kernel capabilities and used FQ-CoDel as the fallback for FQ. Unsupported sysctl settings were left alone.
+- Excluded CLAT and VPN interfaces from physical-interface tuning and omitted local addresses from mobile gateway readback.
+- Read legacy and current Android subscription records, including single-SIM live registry output, and added a scoped Wi-Fi framework fallback.
+- Required a complete TLS handshake, system CA trust and provider identity verification before switching to a named Private DNS provider. The system choice restored Android opportunistic mode. An unavailable TLS ABI left the current settings in place.
 
-## TCP Optimizer Pro v1.9.2
+## v2.0.2
 
-- Export settings and app rules to a timestamped JSON backup in `/sdcard/Download`. Import replaces the saved settings and rules after daemon schema validation, using the existing atomic commit and kernel readback paths.
-- Probe DoT with a bounded TLS ClientHello on TCP/853. Include SNI for DNS names and report ServerHello, HelloRetryRequest, or TLS Alert. The probe stops before certificate verification.
-- Support callback and legacy synchronous WebUI bridges. Honor disable and removal markers at startup, and preserve the recovery journal if uninstall cannot verify restoration.
+### Fixed
 
-## TCP Optimizer Pro v1.9.1
+- Read the associated access point from the kernel BSS cache and preserved valid RSSI when a driver returned its own MAC in a station dump.
+- Preserved in-flight apply and resume requests during concurrent control events and expired abandoned requests with a one-shot deadline.
+- Corrected paused profile labels, advanced Qdisc availability, verification age and feedback for recommended profiles.
 
-- Gateway-only latency probe now computes Jitter, Packet Loss, and first/min-max RTT directly from the Gateway ICMP batch.
-- Replaced `Unknown + Unknown` readback labels on inactive network paths with clear status text (`Inactive (Wi-Fi active)` / `Inactive (Mobile active)`).
-- Updated the Home Wi-Fi and Mobile cards to display a clear confirmed driver-managed MQ state instead of a pending warning.
-- Fixed the detail modal usage note to display the real device RAM from `status.json`.
-- Cleaned Python `__pycache__` artifacts from the source repository package.
+## v2.0.1
 
-## TCP Optimizer Pro v1.9.0
+### Fixed
 
-- Enabled tapping the Home Wi-Fi card directly to open the Wi-Fi diagnostics popup.
-- Added selectable and custom public Ping targets (`1.1.1.1`, `8.8.8.8`, `9.9.9.9`, `Gateway only`, or custom host/IP) bound to the active egress interface.
-- Added read-only Private DNS status display and an on-demand DoT (TCP/853) connectivity check.
-- Redesigned Network Route Diagnostics (collapsible secondary interfaces) and the Kernel Verification card in Bento style; fixed label wrapping in Settings and Apps tabs.
-- Synchronized version metadata across daemon and WebUI, removing legacy fallback version strings.
+- Read the connected access point BSSID from station replies and kept the Wi-Fi identity when telemetry expired on the same association.
+- Calculated the displayed Bufferbloat delta from the rounded RTT values and retained the measured grade.
+- Showed one thermal status dot next to the battery temperature and reused Home kernel readback for standby mobile routes in Settings.
 
-## TCP Optimizer Pro v1.8.1
+## v2.0.0
 
-- WebUI header now displays the live version read from daemon status.
-- TCP + Qdisc modal explains the resolved algorithm and queue discipline when set to Auto.
-- Replaced the CAKE Diffserv dropdown with a Bento-styled segmented button group.
+### Changed
 
-## TCP Optimizer Pro v1.8.0
+- Left Wi-Fi power saving with Android and migrated legacy ownership once. Made the F16 gaming lease opt-in, required driver readback and stopped trying the lease on that interface after a failure.
+- Isolated secondary Wi-Fi events and used a one-shot handover timer. Applied the route window once per settled route and preset. Used 10/20 on detected 2.4 GHz Wi-Fi and kept the configured preset for other or unknown bands.
+- Resolved concurrent foreground apps by rule priority and kept Gaming active for up to five seconds through an overlay without a rule.
+- Suspended low-latency leases on persistent weak signal or kernel loss while the WebUI or a lease was active. Required four seconds of clean samples before resuming. Counted link drops per interface and TCP retransmits per network namespace.
+- Used the median of five idle ICMP probes for Bufferbloat and withheld the grade when loaded RTT was more than 15 ms below idle RTT.
 
-- Added optional Wi-Fi Power Save lease for Gaming mode and two optional TCP leases (autocorking and slow-start-after-idle) for Gaming and Max Speed modes, guarded by screen state and battery temperature with automatic journal restore.
-- Extended optional `initcwnd`/`initrwnd` route tuning to verify and apply independently to both IPv4 and IPv6 default routes on the active egress interface while skipping cross-interface CLAT and ambiguous routes.
-- Added PIE and FQ-PIE detection when supported by the kernel, plus optional MTU-based quantum for FQ/FQ-CoDel and Diffserv modes for CAKE in manual configurations.
-- Expanded Wi-Fi diagnostics popup with live Power Save state, active lease status, channel width, frequency, band, and driver-reported country code.
-- Added KernelSU Next OTA metadata and automated GitHub Release workflow for verified tags.
-- New installations disable leases, route windows, and advanced Qdisc options by default; upgrades preserve existing user settings.
+### Added
 
-## TCP Optimizer Pro v1.7.0
+- Added thermal, TSQ, link and lease readback to the WebUI and showed the Bufferbloat grade in the result grid.
+- Added a separate switch for boot-time Qdisc priming.
 
-- Universal Zero-Hardcode upgrade: dynamically probes 100% of hardware, TCP, and Qdisc capabilities from the kernel with automatic CC-aware priority chains (`BBR -> fq`, non-BBR `-> fq_codel`).
-- Added multi-platform cellular and VPN interface detection, handover debounce protection, first/min-max RTT metrics, and a copy-logs button in WebUI.
+## v1.9.4
 
-## TCP Optimizer Pro v1.6.1
+### Fixed
 
-- Stable v1.6.1 release featuring ARM64 16 KiB ELF alignment, pure C11 Netlink daemon, TSO `errno=16` fix, WebView diagnostics export fix, and VI/EN UI refinements.
+- Fixed mobile radio cache field splitting on Android mksh and added support for non-negative eSIM slot indices.
+- Warmed up ICMP before idle measurements. Kept live HTTP streams across ICMP windows, timestamped echoes first, retained qualifying samples at EOF or the byte cap, and aggregated samples across fallback downloads.
+- Used Cloudflare HTTP load endpoints with a 64 MiB cap, a 4.8-second load limit and a 7.5-second total limit. Required enough bytes and valid replies before grading.
+- Preserved idle ping tiles during Bufferbloat tests and displayed the correct jitter and loss units for missing values.
+
+## v1.9.3
+
+### Added
+
+- Added an on-demand Bufferbloat measurement that compares idle ICMP RTT with ICMP during a bounded HTTP download. It reported loaded jitter and packet loss and withheld the grade when the download was insufficient.
+- Kept the last two measurements on Home for an A/B comparison with their TCP algorithm, Qdisc and operating mode.
+- Read the active data SIM, LTE/5G display state and RSRP from the matching live phone block during on-demand mobile refresh. Mobile labels omitted missing signal values and latency units stayed attached to their numbers.
+
+## v1.9.2
+
+### Added
+
+- Exported settings and app rules to a timestamped JSON backup in `/sdcard/Download`. Import replaced saved settings and rules after daemon schema validation, using the existing atomic commit and kernel readback paths.
+- Probed DoT with a bounded TLS ClientHello on TCP/853. Included SNI for DNS names and reported ServerHello, HelloRetryRequest or TLS Alert. The probe stopped before certificate verification.
+- Supported callback and legacy synchronous WebUI bridges. Honored disable and removal markers at startup and preserved the recovery journal if uninstall could not verify restoration.
+
+## v1.9.1
+
+### Fixed
+
+- Calculated jitter, packet loss, and first and min–max RTT directly from the gateway-only ICMP batch.
+- Replaced `Unknown + Unknown` readback labels on inactive network paths with `Inactive (Wi-Fi active)` or `Inactive (Mobile active)`.
+- Updated the Home Wi-Fi and Mobile cards to show the confirmed driver-managed MQ state in place of a pending warning.
+- Fixed the detail dialog to show the device RAM reported in `status.json`.
+
+### Removed
+
+- Removed generated Python cache files from the repository archive.
+
+## v1.9.0
+
+### Added
+
+- Opened Wi-Fi diagnostics by tapping the Home Wi-Fi card.
+- Added selectable and custom ping targets bound to the active egress interface. Choices included `1.1.1.1`, `8.8.8.8`, `9.9.9.9`, Gateway only and a custom hostname or IP address.
+- Added read-only Private DNS status and an on-demand DoT connectivity check on TCP/853.
+
+### Changed
+
+- Redesigned Network Route Diagnostics with collapsible secondary interfaces and restyled the Kernel Verification card in Bento style. Fixed label wrapping in Settings and Apps.
+- Synchronized daemon and WebUI versions and removed legacy fallback version strings.
+
+## v1.8.1
+
+### Fixed
+
+- Displayed the running daemon version in the WebUI header.
+
+### Changed
+
+- Explained the selected TCP algorithm and queue discipline in the TCP + Qdisc dialog when set to Auto.
+- Replaced the CAKE Diffserv dropdown with a Bento-style segmented button group.
+
+## v1.8.0
+
+### Added
+
+- Added an optional Wi-Fi Power Save lease for Gaming and optional TCP leases for autocorking and slow start after idle in Gaming and Max Speed. Screen state and battery temperature gated the leases, and the journal restored the original values.
+- Extended optional `initcwnd` and `initrwnd` tuning to verify and apply independently to IPv4 and IPv6 default routes on the active egress interface, skipping cross-interface CLAT and ambiguous routes.
+- Added PIE and FQ-PIE detection where supported. Manual configurations could use MTU-based quantum for FQ and FQ-CoDel or Diffserv modes for CAKE.
+- Expanded Wi-Fi diagnostics with live Power Save state, lease status, channel width, frequency, band and driver-reported country code.
+- Added KernelSU Next OTA metadata and an automated GitHub release workflow for verified tags.
+
+### Changed
+
+- Disabled leases, route windows and advanced Qdisc options by default for new installations. Upgrades preserved saved settings.
+
+## v1.7.0
+
+### Changed
+
+- Replaced hardcoded device profiles with runtime detection of hardware and kernel TCP and Qdisc capabilities. Preferred FQ for BBR and FQ-CoDel for other congestion-control algorithms.
+
+### Added
+
+- Added cellular and VPN interface detection across platforms, handover debounce, first and min–max RTT metrics, and a copy-logs button in the WebUI.
+
+## v1.6.1
+
+### Changed
+
+- Shipped the C11 Netlink daemon with 16 KiB ELF alignment on ARM64 and refined the English and Vietnamese WebUI.
+
+### Fixed
+
+- Fixed TSO handling for `errno=16` and diagnostic export in WebView.

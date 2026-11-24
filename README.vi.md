@@ -1,12 +1,12 @@
 <p align="center"><a href="https://github.com/SunW1011/tcp-optimizer-pro">English</a> | <strong>Tiếng Việt</strong></p>
 
-# TCP Optimizer Pro v2.2.2
+# TCP Optimizer Pro v2.2.3
 
-TCP Optimizer Pro là mô-đun KernelSU cho Android ARM64 (API 26 trở lên, `versionCode=222`). Mô-đun áp dụng cấu hình TCP và Qdisc cho Wi-Fi và dữ liệu di động, rồi đọc lại giá trị do kernel báo. Thuật toán có sẵn và khả năng đổi hàng đợi phụ thuộc vào kernel và driver mạng.
+TCP Optimizer Pro là mô-đun KernelSU cho Android ARM64 (API 26 trở lên, `versionCode=223`). Mô-đun áp dụng cấu hình TCP và Qdisc cho Wi-Fi và dữ liệu di động, rồi đọc lại giá trị do kernel báo. Thuật toán có sẵn và khả năng đổi hàng đợi phụ thuộc vào kernel và driver mạng.
 
 ## Cài đặt
 
-1. Tải `TCP-Optimizer-Pro-v2.2.2-KSU.zip` và `SHA256SUMS` từ [bản phát hành v2.2.2](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.2.2).
+1. Tải `TCP-Optimizer-Pro-v2.2.3-KSU.zip` và `SHA256SUMS` từ [bản phát hành v2.2.3](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.2.3).
 2. Trong thư mục tải xuống, chạy `sha256sum -c SHA256SUMS` và kiểm tra dòng kết quả của ZIP có ghi `OK`.
 3. Cài ZIP trong KernelSU Manager, khởi động lại thiết bị rồi mở WebUI của mô-đun.
 
@@ -34,6 +34,12 @@ WebUI hiện **Tự tạm hoãn (Wi-Fi kép)** trong thời gian chờ. Độ �
 - Khi WebUI báo chờ tạo lại hàng đợi MQ bằng FQ, giữ bật **Khởi tạo Qdisc Wi-Fi lúc boot** và khởi động lại. WebUI báo riêng nếu công tắc này đang tắt.
 - Từ điển kernel hiển thị 32 sysctl và đánh dấu những giá trị chưa đọc được. Điểm Bufferbloat tính cả độ trễ khi có tải và tỷ lệ mất gói. Khi so sánh A/B, dùng cùng loại mạng, phép đo và đích.
 - Nếu DNS tự động dùng địa chỉ router nội bộ, chọn Cloudflare, Google hoặc AdGuard để kiểm tra Private DNS qua TCP/853.
+
+## Sao lưu và chẩn đoán
+
+Trong tab **Cài đặt**, nhập tên tệp JSON rồi chọn thư mục để xuất hoặc nhập cấu hình. Thư mục mặc định là `/sdcard/Download`. Bạn cũng có thể dùng trình chọn tệp của thiết bị để nhập JSON. Sau khi nhập, xem mục **Xác nhận kernel** để biết kết quả áp dụng.
+
+Báo cáo chẩn đoán dùng cùng các lựa chọn thư mục và được lưu dưới dạng TXT. WebUI hỏi trước khi ghi đè và hiện đường dẫn khi Android cung cấp.
 
 ## Khôi phục và báo lỗi
 

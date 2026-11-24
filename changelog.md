@@ -1,5 +1,14 @@
 # Changelog
 
+## v2.2.3
+
+- Added custom filenames and folders for configuration backups and diagnostic reports, with overwrite confirmation.
+- Added JSON import through the Android file picker and kept import by path available.
+- Fixed initial TCP window status during restore and when optimization is paused.
+- Added Dual Wi-Fi deferral to the initial TCP window details.
+- Fixed keyboard dismissal and focus restoration for app profiles, and clarified when a saved profile is waiting for optimization to resume.
+- Rechecked pending apply requests after the WebUI returns from the background.
+
 ## v2.2.2
 
 - Restored Wi-Fi initial TCP windows when two Wi-Fi interfaces began routing and resumed tuning after 15 seconds on single Wi-Fi.

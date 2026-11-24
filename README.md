@@ -1,12 +1,12 @@
 <p align="center"><strong>English</strong> | <a href="https://github.com/SunW1011/tcp-optimizer-pro/blob/main/README.vi.md">Tiếng Việt</a></p>
 
-# TCP Optimizer Pro v2.2.2
+# TCP Optimizer Pro v2.2.3
 
-TCP Optimizer Pro is a KernelSU module for Android ARM64 (API 26 or later, `versionCode=222`). It applies TCP and Qdisc profiles for Wi-Fi and mobile data, then reads back the values the kernel reports. Available algorithms and queue changes depend on the device kernel and network driver.
+TCP Optimizer Pro is a KernelSU module for Android ARM64 (API 26 or later, `versionCode=223`). It applies TCP and Qdisc profiles for Wi-Fi and mobile data, then reads back the values the kernel reports. Available algorithms and queue changes depend on the device kernel and network driver.
 
 ## Install
 
-1. Download `TCP-Optimizer-Pro-v2.2.2-KSU.zip` and `SHA256SUMS` from the [v2.2.2 release](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.2.2).
+1. Download `TCP-Optimizer-Pro-v2.2.3-KSU.zip` and `SHA256SUMS` from the [v2.2.3 release](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.2.3).
 2. In the download directory, run `sha256sum -c SHA256SUMS` and check that the ZIP reports `OK`.
 3. Install the ZIP in KernelSU Manager, reboot the device and open the module WebUI.
 
@@ -34,6 +34,12 @@ The WebUI shows **Paused (Dual Wi-Fi)** while the initial windows are deferred. 
 - If FQ is waiting on MQ queues, keep **Prime Wi-Fi Qdisc at boot** enabled and reboot to recreate the queues. The WebUI shows a separate message when boot priming is off.
 - The kernel dictionary shows 32 live sysctl entries and marks unavailable readings. Bufferbloat uses loaded latency and packet loss for its grade. Compare A/B results from the same network type, test and endpoints.
 - To check Private DNS over TCP/853 when automatic DNS uses a local router address, select Cloudflare, Google or AdGuard.
+
+## Backups and diagnostics
+
+In Settings, enter a JSON filename and choose a folder to export or import your settings. The default is `/sdcard/Download`. You can also import a JSON file with the device picker. Review kernel confirmation after an import to see what applied.
+
+Diagnostic reports use the same folder choices and save as TXT files. The WebUI asks before replacing a file and shows the saved path when Android provides it.
 
 ## Restore and report issues
 

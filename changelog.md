@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.2.4
+
+- Replaced the folder shortcuts with a picker for JSON backups and diagnostic reports.
+- Shortened suggested filenames and added a clear button.
+- Opened the Android file picker from the main import button and kept import from the selected folder available.
+- Tightened the diagnostic dialog and placed Save file first.
+
 ## v2.2.3
 
 - Added custom filenames and folders for configuration backups and diagnostic reports, with overwrite confirmation.

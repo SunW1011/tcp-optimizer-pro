@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.2.2
+
+- Restored Wi-Fi initial TCP windows when two Wi-Fi interfaces began routing and resumed tuning after 15 seconds on single Wi-Fi.
+- Released the Gaming Wi-Fi power-save lease during Dual Wi-Fi and deferred station queries for 2.5 seconds after link events.
+- Added a Dual Wi-Fi pause message to the initial TCP window card and settings.
+
 ## v2.2.1
 
 ### Fixed

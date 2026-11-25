@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.2.5
+
+- Split Settings into pinned Network, Advanced and System tabs.
+- Reduced the backup card to Export config and Import config. Moved import confirmation before the Android file picker.
+- Added a shared folder browser for JSON backups and diagnostic text files, including folder creation in shared storage.
+- Simplified the diagnostic preview to Save file, Copy and Close.
+
 ## v2.2.4
 
 - Replaced the folder shortcuts with a picker for JSON backups and diagnostic reports.

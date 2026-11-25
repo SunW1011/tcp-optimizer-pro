@@ -1,12 +1,12 @@
 <p align="center"><a href="https://github.com/SunW1011/tcp-optimizer-pro">English</a> | <strong>Tiếng Việt</strong></p>
 
-# TCP Optimizer Pro v2.2.4
+# TCP Optimizer Pro v2.2.5
 
-TCP Optimizer Pro là mô-đun KernelSU cho Android ARM64 (API 26 trở lên, `versionCode=224`). Mô-đun áp dụng cấu hình TCP và Qdisc cho Wi-Fi và dữ liệu di động, rồi đọc lại giá trị do kernel báo. Thuật toán có sẵn và khả năng đổi hàng đợi phụ thuộc vào kernel và driver mạng.
+TCP Optimizer Pro là mô-đun KernelSU cho Android ARM64 (API 26 trở lên, `versionCode=225`). Mô-đun áp dụng cấu hình TCP và Qdisc cho Wi-Fi và dữ liệu di động, rồi đọc lại giá trị do kernel báo. Thuật toán có sẵn và khả năng đổi hàng đợi phụ thuộc vào kernel và driver mạng.
 
 ## Cài đặt
 
-1. Tải `TCP-Optimizer-Pro-v2.2.4-KSU.zip` và `SHA256SUMS` từ [bản phát hành v2.2.4](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.2.4).
+1. Tải `TCP-Optimizer-Pro-v2.2.5-KSU.zip` và `SHA256SUMS` từ [bản phát hành v2.2.5](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.2.5).
 2. Trong thư mục tải xuống, chạy `sha256sum -c SHA256SUMS` và kiểm tra dòng kết quả của ZIP có ghi `OK`.
 3. Cài ZIP trong KernelSU Manager, khởi động lại thiết bị rồi mở WebUI của mô-đun.
 
@@ -37,9 +37,11 @@ WebUI hiện **Tự tạm hoãn (Wi-Fi kép)** trong thời gian chờ. Độ �
 
 ## Sao lưu và chẩn đoán
 
-Trong **Cài đặt**, chọn thư mục rồi bấm **Xuất cấu hình** để lưu JSON. **Nhập cấu hình** mở trình chọn tệp Android. Nếu ROM chặn trình chọn tệp, nhập tên tệp rồi bấm **Nhập từ thư mục đã chọn**. Xem **Xác nhận kernel** sau khi nhập.
+Trang **Cài đặt** mở ở tab **Mạng**. Tab **Nâng cao** chứa các tùy chọn daemon, định tuyến, Qdisc và ghi đè ROM. Vào **Hệ thống** để xem kết quả kernel, sao lưu cấu hình, xuất chẩn đoán hoặc tra cứu tham số.
 
-Bản sao cấu hình và báo cáo chẩn đoán mặc định lưu vào `/sdcard/Download`. Chọn **Thư mục khác...** để nhập đường dẫn. Bấm **×** để xóa tên gợi ý. WebUI hỏi trước khi ghi đè và hiện đường dẫn vừa lưu.
+Trong tab **Hệ thống**, bấm **Xuất cấu hình** để lưu bản sao JSON. **Nhập cấu hình** yêu cầu xác nhận trước khi mở trình chọn tệp Android. Sau khi nhập, xem kết quả ở mục **Xác nhận kernel**.
+
+**Xuất cấu hình** và **Lưu tệp** trong cửa sổ xem báo cáo dùng cùng một hộp thoại. Hộp thoại mở ở `/sdcard/Download` hoặc ở `/sdcard` nếu chưa có thư mục Download. Chạm vào thư mục để mở, **←** để lên thư mục cha hoặc **+** để tạo thư mục. Bấm **×** cạnh tên tệp để xóa tên gợi ý. WebUI hỏi trước khi ghi đè và hiện đường dẫn đầy đủ sau khi lưu.
 
 ## Khôi phục và báo lỗi
 

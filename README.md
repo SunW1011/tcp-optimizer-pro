@@ -1,12 +1,12 @@
 <p align="center"><strong>English</strong> | <a href="https://github.com/SunW1011/tcp-optimizer-pro/blob/main/README.vi.md">Tiếng Việt</a></p>
 
-# TCP Optimizer Pro v2.2.4
+# TCP Optimizer Pro v2.2.5
 
-TCP Optimizer Pro is a KernelSU module for Android ARM64 (API 26 or later, `versionCode=224`). It applies TCP and Qdisc profiles for Wi-Fi and mobile data, then reads back the values the kernel reports. Available algorithms and queue changes depend on the device kernel and network driver.
+TCP Optimizer Pro is a KernelSU module for Android ARM64 (API 26 or later, `versionCode=225`). It applies TCP and Qdisc profiles for Wi-Fi and mobile data, then reads back the values the kernel reports. Available algorithms and queue changes depend on the device kernel and network driver.
 
 ## Install
 
-1. Download `TCP-Optimizer-Pro-v2.2.4-KSU.zip` and `SHA256SUMS` from the [v2.2.4 release](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.2.4).
+1. Download `TCP-Optimizer-Pro-v2.2.5-KSU.zip` and `SHA256SUMS` from the [v2.2.5 release](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.2.5).
 2. In the download directory, run `sha256sum -c SHA256SUMS` and check that the ZIP reports `OK`.
 3. Install the ZIP in KernelSU Manager, reboot the device and open the module WebUI.
 
@@ -37,9 +37,11 @@ The WebUI shows **Paused (Dual Wi-Fi)** while the initial windows are deferred. 
 
 ## Backups and diagnostics
 
-In **Settings**, choose a folder and use **Export config** to save a JSON backup. **Import config** opens the Android file picker. If your ROM blocks it, enter the filename and use **Import from selected folder**. Review kernel confirmation after importing.
+Settings opens on **Network**. Use **Advanced** for daemon controls, route tuning and ROM overrides. **System** contains kernel confirmation, backups, diagnostics, and the kernel reference.
 
-Backups and diagnostic reports default to `/sdcard/Download`. Choose **Custom folder...** to enter a path. Use **×** to clear a suggested filename. The WebUI asks before replacing a file and shows the saved path.
+Under **System**, use **Export config** to save a JSON backup. **Import config** asks for confirmation before opening the Android file picker. Review kernel confirmation after importing.
+
+**Export config** and **Save file** in the diagnostic preview open the same folder browser. It starts at `/sdcard/Download` and opens `/sdcard` if Download is missing. Tap a folder to open it, **←** to go up, or **+** to create a folder. Use **×** beside the filename to clear it. The WebUI asks before replacing a file and shows the full path after saving.
 
 ## Restore and report issues
 

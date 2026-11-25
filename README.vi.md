@@ -1,12 +1,12 @@
 <p align="center"><a href="https://github.com/SunW1011/tcp-optimizer-pro">English</a> | <strong>Tiếng Việt</strong></p>
 
-# TCP Optimizer Pro v2.2.6
+# TCP Optimizer Pro v2.3.0
 
-TCP Optimizer Pro là mô-đun KernelSU cho Android ARM64 (API 26 trở lên, `versionCode=226`). Mô-đun áp dụng cấu hình TCP và Qdisc cho Wi-Fi và dữ liệu di động, rồi đọc lại giá trị do kernel báo. Thuật toán có sẵn và khả năng đổi hàng đợi phụ thuộc vào kernel và driver mạng.
+TCP Optimizer Pro là mô-đun KernelSU cho Android ARM64 (API 26 trở lên, `versionCode=230`). Mô-đun áp dụng cấu hình TCP và Qdisc cho Wi-Fi và dữ liệu di động, rồi đọc lại giá trị do kernel báo. Thuật toán có sẵn và khả năng đổi hàng đợi phụ thuộc vào kernel và driver mạng.
 
 ## Cài đặt
 
-1. Tải `TCP-Optimizer-Pro-v2.2.6-KSU.zip` và `SHA256SUMS` từ [bản phát hành v2.2.6](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.2.6).
+1. Tải `TCP-Optimizer-Pro-v2.3.0-KSU.zip` và `SHA256SUMS` từ [bản phát hành v2.3.0](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.3.0).
 2. Trong thư mục tải xuống, chạy `sha256sum -c SHA256SUMS` và kiểm tra dòng kết quả của ZIP có ghi `OK`.
 3. Cài ZIP trong KernelSU Manager, khởi động lại thiết bị rồi mở WebUI của mô-đun.
 
@@ -27,6 +27,10 @@ Cả ba giữ mặc định ROM và giữ chế độ vận hành bạn đã ch�
 Khi hai giao diện Wi-Fi cùng định tuyến, mô-đun hoàn nguyên cửa sổ TCP đã đổi trên Wi-Fi và nhả lease tạm tắt tiết kiệm điện Wi-Fi của chế độ **Chơi game**. Sau 15 giây dùng Wi-Fi đơn, mô-đun áp lại cửa sổ đã chọn kể cả khi WebUI đóng. Dữ liệu di động và các lease chỉ đổi TCP vẫn theo điều kiện thông thường.
 
 WebUI hiện **Tự tạm hoãn (Wi-Fi kép)** trong thời gian chờ. Độ ổn định Wi-Fi còn phụ thuộc ROM, driver và điểm phát.
+
+## VPN và tunnel
+
+Khi VPN có tuyến đang hoạt động, daemon tạm hoãn chỉnh cửa sổ TCP khởi tạo trên Wi-Fi và di động. Daemon hoàn nguyên các thông số tuyến IPv4 và IPv6 đã chỉnh, đồng thời giữ nguyên tuyến của tunnel. Sau khi VPN ngắt, daemon chờ 5 giây rồi áp lại trên tuyến đủ điều kiện. Trang chính và báo cáo chẩn đoán hiển thị trạng thái tạm hoãn.
 
 ## Kiểm tra mạng
 

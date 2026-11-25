@@ -1,12 +1,12 @@
 <p align="center"><strong>English</strong> | <a href="https://github.com/SunW1011/tcp-optimizer-pro/blob/main/README.vi.md">Tiếng Việt</a></p>
 
-# TCP Optimizer Pro v2.2.6
+# TCP Optimizer Pro v2.3.0
 
-TCP Optimizer Pro is a KernelSU module for Android ARM64 (API 26 or later, `versionCode=226`). It applies TCP and Qdisc profiles for Wi-Fi and mobile data, then reads back the values the kernel reports. Available algorithms and queue changes depend on the device kernel and network driver.
+TCP Optimizer Pro is a KernelSU module for Android ARM64 (API 26 or later, `versionCode=230`). It applies TCP and Qdisc profiles for Wi-Fi and mobile data, then reads back the values the kernel reports. Available algorithms and queue changes depend on the device kernel and network driver.
 
 ## Install
 
-1. Download `TCP-Optimizer-Pro-v2.2.6-KSU.zip` and `SHA256SUMS` from the [v2.2.6 release](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.2.6).
+1. Download `TCP-Optimizer-Pro-v2.3.0-KSU.zip` and `SHA256SUMS` from the [v2.3.0 release](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.3.0).
 2. In the download directory, run `sha256sum -c SHA256SUMS` and check that the ZIP reports `OK`.
 3. Install the ZIP in KernelSU Manager, reboot the device and open the module WebUI.
 
@@ -27,6 +27,10 @@ The profiles keep ROM defaults and leave your selected operating mode in place. 
 When two Wi-Fi interfaces are routing, the module restores the initial TCP windows it changed on Wi-Fi and releases the Gaming Wi-Fi power-save lease. It reapplies the configured windows after 15 seconds on a single Wi-Fi interface, even with the WebUI closed. Mobile data and the TCP-only leases follow their usual rules.
 
 The WebUI shows **Paused (Dual Wi-Fi)** while the initial windows are deferred. Wi-Fi stability also depends on the ROM, driver and access points.
+
+## VPN and tunnels
+
+A routed VPN pauses initial TCP window tuning on Wi-Fi and mobile. The daemon restores the IPv4 and IPv6 route metrics it changed and leaves the tunnel routes alone. It waits five seconds after the tunnel disconnects before reapplying eligible settings. The home screen and diagnostic report show the pause.
 
 ## Network checks
 

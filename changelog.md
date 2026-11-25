@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.3.0
+
+- Added VPN protection for initial TCP windows. Physical routes return to their prior IPv4 and IPv6 metrics while a routed tunnel is active. Tuning resumes after five seconds without the tunnel.
+- Added VPN pause status to the home screen, the TCP window details and the diagnostic report.
+- Fixed app icons on the first visit to the Apps tab with a cached app list.
+- Kept the compact TSQ readout on one line on narrow screens.
+
 ## v2.2.6
 
 - Added installed app icons on KernelSU managers that serve them, with initials as a fallback. Shortened the default app profile label.

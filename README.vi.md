@@ -12,7 +12,7 @@ TCP Optimizer Pro là mô-đun KernelSU cho Android ARM64 (API 26 trở lên, `v
 
 ## Cấu hình nhanh theo mục tiêu
 
-Tab **Cài đặt** có ba hồ sơ cho Wi-Fi và dữ liệu di động. Cả ba đặt TCP và Qdisc về **Tự động** và bật khởi tạo Qdisc lúc boot. TCP được thử theo thứ tự `bbr3 → bbr2 → bbr → cubic → westwood → htcp → reno`. Qdisc ưu tiên FQ với BBR và FQ-CoDel với các thuật toán TCP khác.
+Tab **Cài đặt** có ba hồ sơ cho Wi-Fi và dữ liệu di động. Cả ba đặt TCP và Qdisc về **Tự động** và bật khởi tạo Qdisc lúc boot. TCP được thử theo thứ tự `bbr3 → bbr → cubic → westwood → htcp → reno...`. Qdisc ưu tiên FQ với BBR và FQ-CoDel với các thuật toán TCP khác.
 
 | Hồ sơ | Thiết lập |
 | --- | --- |

@@ -12,7 +12,7 @@ TCP Optimizer Pro is a KernelSU module for Android ARM64 (API 26 or later, `vers
 
 ## Quick profiles
 
-Settings offers three profiles for Wi-Fi and mobile data. Each selects Auto for TCP and Qdisc and enables boot-time Qdisc priming. Auto tries `bbr3 → bbr2 → bbr → cubic → westwood → htcp → reno`. It prefers FQ with BBR and FQ-CoDel with other TCP algorithms.
+Settings offers three profiles for Wi-Fi and mobile data. Each selects Auto for TCP and Qdisc and enables boot-time Qdisc priming. Auto tries `bbr3 → bbr → cubic → westwood → htcp → reno`. It prefers FQ with BBR and FQ-CoDel with other TCP algorithms.
 
 | Profile | Changes |
 | --- | --- |

@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.4.0
+
+- Added a Companion app that displays the same WebUI as the KernelSU module.
+- Added the Android document picker for configuration exports and diagnostic reports in the app.
+- Added installed app labels and icons where Android allows access.
+- Updated release packaging to publish the module ZIP and signed Companion APK with a shared checksum file.
+
 ## v2.3.2
 
 - Switched Home mode buttons to icons with translated labels for assistive technology and showed the selected mode above them.

@@ -1,18 +1,26 @@
 <p align="center"><strong>English</strong> | <a href="https://github.com/SunW1011/tcp-optimizer-pro/blob/main/README.vi.md">Tiếng Việt</a></p>
 
-# TCP Optimizer Pro v2.3.0
+# TCP Optimizer Pro v2.3.1
 
-TCP Optimizer Pro is a KernelSU module for Android ARM64 (API 26 or later, `versionCode=230`). It applies TCP and Qdisc profiles for Wi-Fi and mobile data, then reads back the values the kernel reports. Available algorithms and queue changes depend on the device kernel and network driver.
+TCP Optimizer Pro is a KernelSU module for Android ARM64 (API 26 or later, `versionCode=231`). It applies TCP and Qdisc profiles for Wi-Fi and mobile data, then reads back the values the kernel reports. Available algorithms and queue changes depend on the device kernel and network driver.
+
+## WebUI
+
+Home shows both network profiles, the active route and its kernel readback, four TCP metrics and four temperature readings. Tap a metric or sensor for details.
+
+In **Settings → Advanced**, the temperature bar shows the battery reading and both protection thresholds. Use the step buttons, presets or exact picker to change the base threshold. Charging raises the threshold by 2°C. In **Settings → Network**, a Driver MQ warning indicates that the driver retains its queue tree. Auto and `fq` remain selectable.
+
+The Apps tab displays the installed app label and icon when the manager provides them. Hosts with an APK inspection tool can read labels from APK metadata. Other hosts show a shortened package name or an initial when the corresponding app metadata is unavailable.
 
 ## Install
 
-1. Download `TCP-Optimizer-Pro-v2.3.0-KSU.zip` and `SHA256SUMS` from the [v2.3.0 release](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.3.0).
+1. Download `TCP-Optimizer-Pro-v2.3.1-KSU.zip` and `SHA256SUMS` from the [v2.3.1 release](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.3.1).
 2. In the download directory, run `sha256sum -c SHA256SUMS` and check that the ZIP reports `OK`.
 3. Install the ZIP in KernelSU Manager, reboot the device and open the module WebUI.
 
 ## Quick profiles
 
-Settings offers three profiles for Wi-Fi and mobile data. Each selects Auto for TCP and Qdisc and enables boot-time Qdisc priming. Auto tries `bbr3 → bbr → cubic → westwood → htcp → reno`. It prefers FQ with BBR and FQ-CoDel with other TCP algorithms.
+Settings offers three profiles for Wi-Fi and mobile data. Each selects Auto for TCP and Qdisc and enables boot-time Qdisc priming. Auto tries `bbr3 → bbr2 → bbr → cubic → westwood → htcp → reno`. It prefers FQ with BBR and FQ-CoDel with other TCP algorithms.
 
 | Profile | Changes |
 | --- | --- |

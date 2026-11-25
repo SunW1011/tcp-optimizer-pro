@@ -1,18 +1,26 @@
 <p align="center"><a href="https://github.com/SunW1011/tcp-optimizer-pro">English</a> | <strong>Tiếng Việt</strong></p>
 
-# TCP Optimizer Pro v2.3.0
+# TCP Optimizer Pro v2.3.1
 
-TCP Optimizer Pro là mô-đun KernelSU cho Android ARM64 (API 26 trở lên, `versionCode=230`). Mô-đun áp dụng cấu hình TCP và Qdisc cho Wi-Fi và dữ liệu di động, rồi đọc lại giá trị do kernel báo. Thuật toán có sẵn và khả năng đổi hàng đợi phụ thuộc vào kernel và driver mạng.
+TCP Optimizer Pro là module KernelSU cho Android ARM64 (API 26 trở lên, `versionCode=231`). Module áp dụng cấu hình TCP và Qdisc cho Wi-Fi và dữ liệu di động, rồi đọc lại giá trị do kernel báo. Thuật toán có sẵn và khả năng đổi hàng đợi phụ thuộc vào kernel và driver mạng.
+
+## WebUI
+
+Trang chủ hiển thị hai cấu hình mạng, tuyến hoạt động và trạng thái xác nhận từ kernel, bốn thông số TCP và bốn cảm biến nhiệt. Chạm vào thông số hoặc cảm biến để xem chi tiết.
+
+Trong **Cài đặt → Nâng cao**, thanh nhiệt hiển thị nhiệt độ pin và hai ngưỡng bảo vệ. Dùng nút bước, mốc nhanh hoặc bảng chọn số để đổi ngưỡng gốc. Khi sạc, ngưỡng tăng thêm 2°C. Trong **Cài đặt → Mạng**, cảnh báo **Driver giữ MQ** cho biết driver giữ nguyên cây hàng đợi. Tự động và `fq` vẫn chọn được.
+
+Tab Ứng dụng hiển thị tên và biểu tượng thật khi trình quản lý cung cấp dữ liệu. Nếu môi trường có công cụ đọc APK, WebUI có thể lấy tên từ metadata của APK. Khi thiếu dữ liệu tương ứng, WebUI dùng tên gói rút gọn hoặc chữ cái đầu.
 
 ## Cài đặt
 
-1. Tải `TCP-Optimizer-Pro-v2.3.0-KSU.zip` và `SHA256SUMS` từ [bản phát hành v2.3.0](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.3.0).
+1. Tải `TCP-Optimizer-Pro-v2.3.1-KSU.zip` và `SHA256SUMS` từ [bản phát hành v2.3.1](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.3.1).
 2. Trong thư mục tải xuống, chạy `sha256sum -c SHA256SUMS` và kiểm tra dòng kết quả của ZIP có ghi `OK`.
-3. Cài ZIP trong KernelSU Manager, khởi động lại thiết bị rồi mở WebUI của mô-đun.
+3. Cài ZIP trong KernelSU Manager, khởi động lại thiết bị rồi mở WebUI của module.
 
 ## Cấu hình nhanh theo mục tiêu
 
-Tab **Cài đặt** có ba hồ sơ cho Wi-Fi và dữ liệu di động. Cả ba đặt TCP và Qdisc về **Tự động** và bật khởi tạo Qdisc lúc boot. TCP được thử theo thứ tự `bbr3 → bbr → cubic → westwood → htcp → reno...`. Qdisc ưu tiên FQ với BBR và FQ-CoDel với các thuật toán TCP khác.
+Tab **Cài đặt** có ba hồ sơ cho Wi-Fi và dữ liệu di động. Cả ba đặt TCP và Qdisc về **Tự động** và bật khởi tạo Qdisc lúc boot. TCP được thử theo thứ tự `bbr3 → bbr2 → bbr → cubic → westwood → htcp → reno`. Qdisc ưu tiên FQ với BBR và FQ-CoDel với các thuật toán TCP khác.
 
 | Hồ sơ | Thiết lập |
 | --- | --- |
@@ -24,7 +32,7 @@ Cả ba giữ mặc định ROM và giữ chế độ vận hành bạn đã ch�
 
 ## Wi-Fi kép
 
-Khi hai giao diện Wi-Fi cùng định tuyến, mô-đun hoàn nguyên cửa sổ TCP đã đổi trên Wi-Fi và nhả lease tạm tắt tiết kiệm điện Wi-Fi của chế độ **Chơi game**. Sau 15 giây dùng Wi-Fi đơn, mô-đun áp lại cửa sổ đã chọn kể cả khi WebUI đóng. Dữ liệu di động và các lease chỉ đổi TCP vẫn theo điều kiện thông thường.
+Khi hai giao diện Wi-Fi cùng định tuyến, module hoàn nguyên cửa sổ TCP đã đổi trên Wi-Fi và nhả lease tạm tắt tiết kiệm điện Wi-Fi của chế độ **Chơi game**. Sau 15 giây dùng Wi-Fi đơn, module áp lại cửa sổ đã chọn kể cả khi WebUI đóng. Dữ liệu di động và các lease chỉ đổi TCP vẫn theo điều kiện thông thường.
 
 WebUI hiện **Tự tạm hoãn (Wi-Fi kép)** trong thời gian chờ. Độ ổn định Wi-Fi còn phụ thuộc ROM, driver và điểm phát.
 
@@ -53,6 +61,6 @@ Trang **Ứng dụng** hiển thị biểu tượng khi trình quản lý Kernel
 
 Chọn **Khôi phục gốc** để dừng tối ưu và khôi phục các giá trị đã ghi nhận trong phiên khởi động hiện tại. Xem kết quả đọc lại để biết các thay đổi còn sót hoặc xung đột.
 
-Khi [báo lỗi](https://github.com/SunW1011/tcp-optimizer-pro/issues), ghi phiên bản mô-đun, phiên bản Android, mẫu máy và các bước tái hiện. Có thể xuất báo cáo chẩn đoán trong WebUI.
+Khi [báo lỗi](https://github.com/SunW1011/tcp-optimizer-pro/issues), ghi phiên bản module, phiên bản Android, mẫu máy và các bước tái hiện. Có thể xuất báo cáo chẩn đoán trong WebUI.
 
 Xem [changelog](https://github.com/SunW1011/tcp-optimizer-pro/blob/main/changelog.md) để tra lịch sử phát hành.

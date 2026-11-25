@@ -1,5 +1,13 @@
 # Changelog
 
+## v2.3.1
+
+- Moved network profiles and route verification into the Home header, TCP metrics into a four-tile grid and temperature readings into a single strip.
+- Grouped Settings rows and added a read-only battery temperature bar. Added half-degree steps, three preset buttons and an exact threshold picker.
+- Ranked TCP algorithms and Qdisc choices in the picker and kernel reference. Disabled incompatible choices when a driver owns the MQ tree.
+- Read installed app labels from the manager or APK inspection where available. Loaded visible icons in a bounded queue and kept their DOM nodes during search and filtering.
+- Kept Private DNS, latency comparisons and configuration results in sync with the selected language. Added a save adapter for future companion apps.
+
 ## v2.3.0
 
 - Added VPN protection for initial TCP windows. Physical routes return to their prior IPv4 and IPv6 metrics while a routed tunnel is active. Tuning resumes after five seconds without the tunnel.
@@ -87,7 +95,7 @@
 
 ### Fixed
 
-- Reported driver-managed MQ with existing pfifo_fast queues as waiting for a reboot when FQ is already the kernel default. Suppressed the partial-apply toast for that state and reported unsupported manual queue changes separately.
+- Reported Driver MQ with existing pfifo_fast queues as waiting for a reboot when FQ is already the kernel default. Suppressed the partial-apply toast for that state and reported unsupported manual queue changes separately.
 - Refreshed missing mobile radio data when Home first opens on mobile or switches to mobile through an offline state, with a 15-second cooldown.
 - Capped the Bufferbloat grade based on packet loss during load.
 - Labeled each A/B measurement with its network type and limited deltas to measurements on the same network type.
@@ -182,7 +190,7 @@
 
 - Calculated jitter, packet loss, and first and min–max RTT directly from the gateway-only ICMP batch.
 - Replaced `Unknown + Unknown` readback labels on inactive network paths with `Inactive (Wi-Fi active)` or `Inactive (Mobile active)`.
-- Updated the Home Wi-Fi and Mobile cards to show the confirmed driver-managed MQ state in place of a pending warning.
+- Updated the Home Wi-Fi and Mobile cards to show the confirmed Driver MQ state in place of a pending warning.
 - Fixed the detail dialog to show the device RAM reported in `status.json`.
 
 ### Removed

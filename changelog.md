@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.5.0
+
+- Added an app-owned Unix socket for the Companion. The daemon authenticates the installed app before accepting requests.
+- Bundled the Companion with the module and opened the app from the manager Action.
+- Fixed Back navigation and saving to document providers that omit the display name.
+
 ## v2.4.0
 
 - Added a Companion app that displays the same WebUI as the KernelSU module.

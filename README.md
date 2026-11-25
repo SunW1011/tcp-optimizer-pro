@@ -1,8 +1,8 @@
 <p align="center"><strong>English</strong> | <a href="https://github.com/SunW1011/tcp-optimizer-pro/blob/main/README.vi.md">Tiếng Việt</a></p>
 
-# TCP Optimizer Pro v2.4.0
+# TCP Optimizer Pro v2.5.0
 
-TCP Optimizer Pro is a KernelSU module for Android ARM64 (API 26 or later, `versionCode=240`). It applies TCP and Qdisc profiles for Wi-Fi and mobile data, then reads back the values the kernel reports. Available algorithms and queue changes depend on the device kernel and network driver.
+TCP Optimizer Pro is a KernelSU module for Android ARM64 (API 26 or later, `versionCode=250`). It applies TCP and Qdisc profiles for Wi-Fi and mobile data, then reads back the values the kernel reports. Available algorithms and queue changes depend on the device kernel and network driver.
 
 ## WebUI
 
@@ -14,13 +14,13 @@ The Apps tab displays the installed app label and icon when the manager provides
 
 ## Install
 
-1. Download `TCP-Optimizer-Pro-v2.4.0-KSU.zip` and `SHA256SUMS` from the [v2.4.0 release](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.4.0).
+1. Download `TCP-Optimizer-Pro-v2.5.0-KSU.zip` and `SHA256SUMS` from the [v2.5.0 release](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.5.0).
 2. In the download directory, run `sha256sum --ignore-missing -c SHA256SUMS` and check that the ZIP reports `OK`.
 3. Install the ZIP in KernelSU Manager, reboot the device and open the module WebUI.
 
 ### Companion app
 
-Download `TCP-Optimizer-Pro-v2.4.0-Companion.apk` from the same release, run the checksum command above and check that the APK reports `OK`. Install the APK after installing the module. Open the app and grant it root access in the manager so it can read live module state and apply settings. Configuration exports and diagnostic reports use the Android system document picker. If prompted, update Android System WebView and reopen the app.
+The module ZIP includes the Companion. Reboot after flashing, then tap **Action** in the manager. The app connects while it is in the foreground. If the connection is unavailable, open the module WebUI in the manager. A reboot with the same module version respects manual removal. Tap **Action** to reinstall, or use the verified standalone APK. Exports use the Android document picker.
 
 ## Quick profiles
 

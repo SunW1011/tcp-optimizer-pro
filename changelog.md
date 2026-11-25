@@ -1,5 +1,19 @@
 # Changelog
 
+## v2.3.2
+
+- Switched Home mode buttons to icons with translated labels for assistive technology and showed the selected mode above them.
+- Aligned the temperature readings, put A/B results side by side and added HTTP load throughput to the Bufferbloat results.
+- Made the footer opaque, aligned Settings pickers and increased destructive button contrast in Dark and AMOLED.
+- Made the top bar opaque and used the same segmented controls for Settings tabs and log filters.
+- Shortened the Home connection card, moved routes and device information behind a disclosure, and kept sensor names in the temperature details.
+- Put the battery threshold controls beside the current reading. Replaced the temperature list with a four-column picker in 0.5°C steps.
+- Unified card and control corners, font sizes and numeric alignment across all four pages.
+- Kept all four Home temperature readings in one row at 320 px.
+- Divided System settings into kernel confirmation, backup, diagnostics and links. Put reapply and restore side by side and used the same layout for action rows.
+- Kept Settings rows together in cards with inset dividers and gave the initial TCP window description the full row width.
+- Kept app package names and profile limits on single lines. Moved log actions into the heading and used a high-contrast delete button in AMOLED.
+
 ## v2.3.1
 
 - Moved network profiles and route verification into the Home header, TCP metrics into a four-tile grid and temperature readings into a single strip.

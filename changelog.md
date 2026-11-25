@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.2.6
+
+- Added installed app icons on KernelSU managers that serve them, with initials as a fallback. Shortened the default app profile label.
+- Clarified the initial TCP window preset and separated daemon controls from routing and queue controls.
+- Aligned the System action buttons and added GitHub, Telegram and voluntary support below the collapsed kernel reference. Both support QR codes are stored in the module.
+- Made the Bufferbloat button full width and explained why the log can show only the daemon startup entry.
+
 ## v2.2.5
 
 - Split Settings into pinned Network, Advanced and System tabs.

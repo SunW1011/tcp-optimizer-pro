@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.5.1
+
+- Removed periodic Companion polling while idle and served fast reads inside the IPC worker.
+- Fixed the Companion configuration picker, full imports, Android Back handling, and upgrades from the module Action button.
+- Added worker restart backoff, a bounded app icon cache, and fewer redundant Home and Wi-Fi telemetry updates.
+- Synced public metadata before publishing a draft release.
+
 ## v2.5.0
 
 - Added an app-owned Unix socket for the Companion. The daemon authenticates the installed app before accepting requests.

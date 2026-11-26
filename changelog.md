@@ -1,5 +1,14 @@
 # Changelog
 
+## v2.5.2
+
+- Fixed Dual Wi-Fi route restoration to ignore the daemon's own Netlink notifications and keep the live gateway and MTU when clearing initial TCP windows.
+- Filtered repeated secondary Wi-Fi link events and read the channel frequency before applying windows on a new Wi-Fi path.
+- Fixed stale signal guard status when sampling stops and kept thermal recovery running across screen changes.
+- Filtered three HyperOS overlays from foreground app detection.
+- Bounded Companion worker shutdown, aligned configuration import byte limits, and limited each Wi-Fi radio probe to two seconds.
+- Improved text contrast and truncation on narrow displays and included Wi-Fi Direct interface names in diagnostics.
+
 ## v2.5.1
 
 - Removed periodic Companion polling while idle and served fast reads inside the IPC worker.

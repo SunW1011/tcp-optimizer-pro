@@ -1,8 +1,8 @@
 <p align="center"><a href="https://github.com/SunW1011/tcp-optimizer-pro">English</a> | <strong>Tiếng Việt</strong></p>
 
-# TCP Optimizer Pro v2.5.1
+# TCP Optimizer Pro v2.5.2
 
-TCP Optimizer Pro là module KernelSU cho Android ARM64 (API 26 trở lên, `versionCode=251`). Module áp dụng cấu hình TCP và Qdisc cho Wi-Fi và dữ liệu di động, rồi đọc lại giá trị do kernel báo. Thuật toán có sẵn và khả năng đổi hàng đợi phụ thuộc vào kernel và driver mạng.
+TCP Optimizer Pro là module KernelSU cho Android ARM64 (API 26 trở lên, `versionCode=252`). Module áp dụng cấu hình TCP và Qdisc cho Wi-Fi và dữ liệu di động, rồi đọc lại giá trị do kernel báo. Thuật toán có sẵn và khả năng đổi hàng đợi phụ thuộc vào kernel và driver mạng.
 
 ## WebUI
 
@@ -14,7 +14,7 @@ Tab Ứng dụng hiển thị tên và biểu tượng thật khi trình quản 
 
 ## Cài đặt
 
-1. Tải `TCP-Optimizer-Pro-v2.5.1-KSU.zip` và `SHA256SUMS` từ [bản phát hành v2.5.1](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.5.1).
+1. Tải `TCP-Optimizer-Pro-v2.5.2-KSU.zip` và `SHA256SUMS` từ [bản phát hành v2.5.2](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.5.2).
 2. Trong thư mục tải xuống, chạy `sha256sum --ignore-missing -c SHA256SUMS` và kiểm tra dòng kết quả của ZIP có ghi `OK`.
 3. Cài ZIP trong KernelSU Manager, khởi động lại thiết bị rồi mở WebUI của module.
 

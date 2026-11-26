@@ -1,5 +1,13 @@
 # Changelog
 
+## v2.5.4
+
+- Fixed the Companion's System theme at launch and when Android switches between light and dark.
+- Clarified why the Qdisc picker offers Auto and fq on interfaces with hardware MQ.
+- Fixed the battery badge during thermal cooldown and retained the TSQ cap until the battery cools.
+- Hid incomplete Home cards while waiting for the first status and gave the Companion a short window to read a fresh sample on launch.
+- Removed internal IPA control interfaces from the secondary network list.
+
 ## v2.5.3
 
 - Fixed initial TCP windows after Wi-Fi handover and band steering. Kept expiring IPv6 router advertisements intact.

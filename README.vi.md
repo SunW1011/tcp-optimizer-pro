@@ -1,8 +1,8 @@
 <p align="center"><a href="https://github.com/SunW1011/tcp-optimizer-pro">English</a> | <strong>Tiếng Việt</strong></p>
 
-# TCP Optimizer Pro v2.5.3
+# TCP Optimizer Pro v2.5.4
 
-TCP Optimizer Pro là module KernelSU cho Android ARM64 (API 26 trở lên, `versionCode=253`). Module áp dụng cấu hình TCP và Qdisc cho Wi-Fi và dữ liệu di động, rồi đọc lại giá trị do kernel báo. Thuật toán có sẵn và khả năng đổi hàng đợi phụ thuộc vào kernel và driver mạng.
+TCP Optimizer Pro là module KernelSU cho Android ARM64 (API 26 trở lên, `versionCode=254`). Module áp dụng cấu hình TCP và Qdisc cho Wi-Fi và dữ liệu di động, rồi đọc lại giá trị do kernel báo. Thuật toán có sẵn và khả năng đổi hàng đợi phụ thuộc vào kernel và driver mạng.
 
 Tuyến IPv6 do router quảng bá giữ nguyên thời hạn. Trên mạng di động, phép đo IPv4 có thể đi qua giao diện CLAT ghép với tuyến IPv6 đang dùng.
 
@@ -16,7 +16,7 @@ Tab Ứng dụng hiển thị tên và biểu tượng thật khi trình quản 
 
 ## Cài đặt
 
-1. Tải `TCP-Optimizer-Pro-v2.5.3-KSU.zip` và `SHA256SUMS` từ [bản phát hành v2.5.3](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.5.3).
+1. Tải `TCP-Optimizer-Pro-v2.5.4-KSU.zip` và `SHA256SUMS` từ [bản phát hành v2.5.4](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.5.4).
 2. Trong thư mục tải xuống, chạy `sha256sum --ignore-missing -c SHA256SUMS` và kiểm tra dòng kết quả của ZIP có ghi `OK`.
 3. Cài ZIP trong KernelSU Manager, khởi động lại thiết bị rồi mở WebUI của module.
 
@@ -48,8 +48,8 @@ Khi VPN có tuyến đang hoạt động, daemon tạm hoãn chỉnh cửa sổ 
 
 ## Kiểm tra mạng
 
-- Chọn giao diện **Sáng** trong WebUI để giữ nền sáng ngay cả khi Android đang dùng giao diện tối.
-- Khi WebUI báo chờ tạo lại hàng đợi MQ bằng FQ, giữ bật **Khởi tạo Qdisc Wi-Fi lúc boot** và khởi động lại. WebUI báo riêng nếu công tắc này đang tắt.
+- Chọn **Theo hệ thống** để dùng nền sáng hoặc tối của Android. Chọn **Sáng**, **Tối** hoặc **AMOLED** để đặt nền cố định.
+- Với giao diện có MQ do driver quản lý, bộ chọn Qdisc chỉ cho chọn **Tự động** hoặc **fq** để giữ hàng đợi phần cứng và hỗ trợ pacing cho BBR. Khi WebUI báo chờ tạo lại hàng đợi MQ bằng FQ, giữ bật **Khởi tạo Qdisc Wi-Fi lúc boot** và khởi động lại. WebUI báo riêng nếu công tắc này đang tắt.
 - Từ điển kernel hiển thị 32 sysctl và đánh dấu những giá trị chưa đọc được. Điểm Bufferbloat tính cả độ trễ khi có tải và tỷ lệ mất gói. Khi so sánh A/B, dùng cùng loại mạng, phép đo và đích.
 - Nếu DNS tự động dùng địa chỉ router nội bộ, chọn Cloudflare, Google hoặc AdGuard để kiểm tra Private DNS qua TCP/853.
 

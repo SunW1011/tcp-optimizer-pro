@@ -1,8 +1,8 @@
 <p align="center"><strong>English</strong> | <a href="https://github.com/SunW1011/tcp-optimizer-pro/blob/main/README.vi.md">Tiếng Việt</a></p>
 
-# TCP Optimizer Pro v2.5.3
+# TCP Optimizer Pro v2.5.4
 
-TCP Optimizer Pro is a KernelSU module for Android ARM64 (API 26 or later, `versionCode=253`). It applies TCP and Qdisc profiles for Wi-Fi and mobile data, then reads back the values the kernel reports. Available algorithms and queue changes depend on the device kernel and network driver.
+TCP Optimizer Pro is a KernelSU module for Android ARM64 (API 26 or later, `versionCode=254`). It applies TCP and Qdisc profiles for Wi-Fi and mobile data, then reads back the values the kernel reports. Available algorithms and queue changes depend on the device kernel and network driver.
 
 Expiring IPv6 router-advertised routes keep their original lifetime. On cellular, IPv4 probes can use the CLAT interface paired with the active IPv6 route.
 
@@ -16,7 +16,7 @@ The Apps tab displays the installed app label and icon when the manager provides
 
 ## Install
 
-1. Download `TCP-Optimizer-Pro-v2.5.3-KSU.zip` and `SHA256SUMS` from the [v2.5.3 release](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.5.3).
+1. Download `TCP-Optimizer-Pro-v2.5.4-KSU.zip` and `SHA256SUMS` from the [v2.5.4 release](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.5.4).
 2. In the download directory, run `sha256sum --ignore-missing -c SHA256SUMS` and check that the ZIP reports `OK`.
 3. Install the ZIP in KernelSU Manager, reboot the device and open the module WebUI.
 
@@ -48,8 +48,8 @@ A routed VPN pauses initial TCP window tuning on Wi-Fi and mobile. The daemon re
 
 ## Network checks
 
-- Select **Light** in the WebUI to keep a light interface even when Android is set to dark.
-- If FQ is waiting on MQ queues, keep **Prime Wi-Fi Qdisc at boot** enabled and reboot to recreate the queues. The WebUI shows a separate message when boot priming is off.
+- Select **System** to follow Android’s light or dark theme. Select **Light**, **Dark** or **AMOLED** to use a fixed theme.
+- The Qdisc picker offers **Auto** and **fq** on driver-managed MQ interfaces to preserve hardware queues and support BBR pacing. If FQ is waiting on MQ queues, keep **Prime Wi-Fi Qdisc at boot** enabled and reboot to recreate the queues. The WebUI shows a separate message when boot priming is off.
 - The kernel dictionary shows 32 live sysctl entries and marks unavailable readings. Bufferbloat uses loaded latency and packet loss for its grade. Compare A/B results from the same network type, test and endpoints.
 - To check Private DNS over TCP/853 when automatic DNS uses a local router address, select Cloudflare, Google or AdGuard.
 

@@ -1,5 +1,14 @@
 # Changelog
 
+## v2.5.3
+
+- Fixed initial TCP windows after Wi-Fi handover and band steering. Kept expiring IPv6 router advertisements intact.
+- Added matching cellular CLAT support for IPv4 probes and allowed more time for Bufferbloat and Private DNS.
+- Improved backlight, thermal sensor and radio checks across Android devices.
+- Included more system apps in the Companion picker and filtered additional HyperOS overlays from foreground detection.
+- Clarified advanced Qdisc behavior in Auto and showed driver-managed MQ as an informational state.
+- Restored logging of repeated events after clearing the log and retained safe interface names in diagnostic exports.
+
 ## v2.5.2
 
 - Fixed Dual Wi-Fi route restoration to ignore the daemon's own Netlink notifications and keep the live gateway and MTU when clearing initial TCP windows.

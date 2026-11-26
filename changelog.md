@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.5.5
+
+- Fixed a persistent TCP congestion control and default Qdisc conflict after another app changes a value owned by the module. A network setting change or Reapply can reclaim ownership while preserving the original value for Restore.
+
 ## v2.5.4
 
 - Fixed the Companion's System theme at launch and when Android switches between light and dark.

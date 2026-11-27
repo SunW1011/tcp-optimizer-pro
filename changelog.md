@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.6.0
+
+- Added live status updates in Companion and intermediate latency and throughput readings during Bufferbloat tests.
+- Fixed Wi-Fi diagnostics after roaming and avoided repeated Qdisc refreshes while a network profile waits for VPN to disconnect.
+
 ## v2.5.6
 
 - Routed public probes through the active VPN and blocked strict Private DNS changes while a tunnel is active.

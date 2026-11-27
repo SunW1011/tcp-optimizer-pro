@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.6.1
+
+- Added boot priming for compatible MQ leaf schedulers and named the selected Qdisc in reboot notices.
+- Clarified the quantum, CAKE Diffserv and low-latency settings.
+
 ## v2.6.0
 
 - Added live status updates in Companion and intermediate latency and throughput readings during Bufferbloat tests.

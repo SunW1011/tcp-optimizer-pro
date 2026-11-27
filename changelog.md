@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.5.6
+
+- Routed public probes through the active VPN and blocked strict Private DNS changes while a tunnel is active.
+- Preserved pending network applies through handovers and reported TCP ownership conflicts after kernel readback.
+- Fixed transient Wi-Fi power save failures, escaped Unicode, and exclusive saves on shared storage.
+- Synced Companion theme and system bars, included launcher-visible system apps, and improved WebUI status and accessibility.
+
 ## v2.5.5
 
 - Fixed a persistent TCP congestion control and default Qdisc conflict after another app changes a value owned by the module. A network setting change or Reapply can reclaim ownership while preserving the original value for Restore.

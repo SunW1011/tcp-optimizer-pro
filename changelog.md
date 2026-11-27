@@ -1,5 +1,14 @@
 # Changelog
 
+## v2.6.2
+
+- Fixed diagnostics losing fresh interface flags and MTU, and restored the Android API and conflict details in exported reports.
+- Fixed recommended-profile takeover when initial TCP windows were already enabled.
+- Changed background Auto sampling to back off from 2 to 5 to 15 seconds while conditions stay stable.
+- Moved configuration and Companion installer locks to the runtime filesystem, and retried transient daemon lock contention on startup.
+- Prevented unnecessary thermal inventory scans on devices without a skin sensor.
+- Updated theme contrast, touch targets, and the shared Wi-Fi and mobile recommendation action.
+
 ## v2.6.1
 
 - Added boot priming for compatible MQ leaf schedulers and named the selected Qdisc in reboot notices.

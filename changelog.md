@@ -1,5 +1,13 @@
 # Changelog
 
+## v2.7.1
+
+- Improved control contrast, keyboard focus and touch targets in Settings, Home and Apps.
+- Fixed Bufferbloat downloads with late payloads and renewed the Companion watchdog on each valid push.
+- Prevented duplicate long service messages and rolled back incomplete debug log lines.
+- Reused interface counter descriptors and skipped thermal inventory scans for absent sensors.
+- Restored takeover when applying a Quick Profile over custom settings and reported Companion installation failures.
+
 ## v2.7.0
 
 - Moved route details into the connection card and added compact temperature bars.

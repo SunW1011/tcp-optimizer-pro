@@ -1,8 +1,8 @@
 <p align="center"><strong>English</strong> | <a href="https://github.com/SunW1011/tcp-optimizer-pro/blob/main/README.vi.md">Tiếng Việt</a></p>
 
-# TCP Optimizer Pro v2.7.0
+# TCP Optimizer Pro v2.7.1
 
-TCP Optimizer Pro is a module for KernelSU, APatch and Magisk for Android ARM64 (API 26 or later, `versionCode=270`). It applies TCP and Qdisc profiles for Wi-Fi and mobile data, then reads back the values the kernel reports. Available algorithms and queue changes depend on the device kernel and network driver.
+TCP Optimizer Pro is a module for KernelSU, APatch and Magisk for Android ARM64 (API 26 or later, `versionCode=271`). It applies TCP and Qdisc profiles for Wi-Fi and mobile data, then reads back the values the kernel reports. Available algorithms and queue changes depend on the device kernel and network driver.
 
 Expiring IPv6 router-advertised routes keep their original lifetime. On cellular, IPv4 probes can use the CLAT interface paired with the active IPv6 route.
 
@@ -16,7 +16,7 @@ The Apps tab displays the installed app label and icon when the manager provides
 
 ## Install
 
-1. Download `TCP-Optimizer-Pro-v2.7.0-KSU.zip` and `SHA256SUMS` from the [v2.7.0 release](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.7.0).
+1. Download `TCP-Optimizer-Pro-v2.7.1-KSU.zip` and `SHA256SUMS` from the [v2.7.1 release](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.7.1).
 2. In the download directory, run `sha256sum --ignore-missing -c SHA256SUMS` and check that the ZIP reports `OK`.
 3. Flash the ZIP in your root manager and reboot. In KernelSU or APatch, **WebUI** opens the manager’s built-in module interface. In Magisk, tap **Action** to launch the Companion. **Action** also launches the Companion in KernelSU and APatch.
 

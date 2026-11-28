@@ -1,14 +1,14 @@
 <p align="center"><strong>English</strong> | <a href="https://github.com/SunW1011/tcp-optimizer-pro/blob/main/README.vi.md">Tiếng Việt</a></p>
 
-# TCP Optimizer Pro v2.6.2
+# TCP Optimizer Pro v2.7.0
 
-TCP Optimizer Pro is a module for KernelSU, APatch and Magisk for Android ARM64 (API 26 or later, `versionCode=262`). It applies TCP and Qdisc profiles for Wi-Fi and mobile data, then reads back the values the kernel reports. Available algorithms and queue changes depend on the device kernel and network driver.
+TCP Optimizer Pro is a module for KernelSU, APatch and Magisk for Android ARM64 (API 26 or later, `versionCode=270`). It applies TCP and Qdisc profiles for Wi-Fi and mobile data, then reads back the values the kernel reports. Available algorithms and queue changes depend on the device kernel and network driver.
 
 Expiring IPv6 router-advertised routes keep their original lifetime. On cellular, IPv4 probes can use the CLAT interface paired with the active IPv6 route.
 
 ## WebUI
 
-Home shows the active connection, both network profiles, four TCP metrics and four temperature readings. Open the route summary for IPv4 and IPv6 diagnostics and device information. Tap a temperature to see its sensor and the protection threshold for the battery.
+Home shows the active connection, both network profiles, four TCP metrics and four temperature readings with small horizontal bars. Open the route summary inside the connection card for IPv4 and IPv6 diagnostics. Use the **Ping**, **Bufferbloat** and **DoT** tabs in **Network tests**. Bufferbloat shows a grade from A+ to D once there is enough sustained load. Use the cancel control to end a running test.
 
 In **Settings → Advanced**, the temperature bar shows the battery reading and both protection thresholds. Use the step buttons, presets or the four-column picker to change the base threshold. The picker covers 35.0°C to 50.0°C in 0.5°C steps. Charging raises the threshold by 2°C. In **Settings → Network**, a Driver MQ warning indicates that the driver retains its queue tree. Auto and compatible leaf schedulers are available according to the kernel.
 
@@ -16,7 +16,7 @@ The Apps tab displays the installed app label and icon when the manager provides
 
 ## Install
 
-1. Download `TCP-Optimizer-Pro-v2.6.2-KSU.zip` and `SHA256SUMS` from the [v2.6.2 release](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.6.2).
+1. Download `TCP-Optimizer-Pro-v2.7.0-KSU.zip` and `SHA256SUMS` from the [v2.7.0 release](https://github.com/SunW1011/tcp-optimizer-pro/releases/tag/v2.7.0).
 2. In the download directory, run `sha256sum --ignore-missing -c SHA256SUMS` and check that the ZIP reports `OK`.
 3. Flash the ZIP in your root manager and reboot. In KernelSU or APatch, **WebUI** opens the manager’s built-in module interface. In Magisk, tap **Action** to launch the Companion. **Action** also launches the Companion in KernelSU and APatch.
 
@@ -34,7 +34,7 @@ Settings offers three profiles for Wi-Fi and mobile data. Each selects Auto for 
 | Gaming / Low latency | Enables temporary low-latency settings while the screen is active and the battery stays below the limit. |
 | Balanced & battery saving | Keeps ROM defaults, enables background Auto and the TSQ/Lowat guard, and turns off low-latency leases. |
 
-The profiles keep ROM defaults and leave your selected operating mode in place. Measured throughput remains subject to the link and its upstream capacity. With the WebUI closed and the screen on, background Auto samples every 2 seconds after a change. It backs off to 5 seconds after three stable samples and 15 seconds after at least 30 seconds of stability. Background sampling stops when the screen is off or in AOD. The TCP low-latency settings can take effect in Gaming or Fast Download, including when Auto selects either scene in the background. Gaming can temporarily turn off Wi-Fi power saving on supported hardware. Open the WebUI to start that lease. The daemon ends leases when the screen turns off, the link becomes weak, or the battery gets too hot.
+The profiles keep ROM defaults and leave your selected operating mode in place. **Maximum speed** is a quick profile. **Fast Download** is a mode. Measured throughput remains subject to the link and its upstream capacity. With the WebUI closed and the screen on, background Auto samples every 2 seconds after a change. It backs off to 5 seconds after three stable samples and 15 seconds after at least 30 seconds of stability. Background sampling stops when the screen is off or in AOD. The TCP low-latency settings can take effect in Gaming or Fast Download, including when Auto selects either scene in the background. Gaming can temporarily turn off Wi-Fi power saving on supported hardware. Open the WebUI to start that lease. The daemon ends leases when the screen turns off, the link becomes weak, or the battery gets too hot.
 
 ## Dual Wi-Fi
 
@@ -51,7 +51,7 @@ A routed VPN pauses initial TCP window tuning on Wi-Fi and mobile. The daemon re
 - Select **System** to follow Android’s light or dark theme. Select **Light**, **Dark** or **AMOLED** to use a fixed theme.
 - For driver MQ, the picker offers **Auto** and up to six compatible leaves supported by the kernel: `fq`, `fq_codel`, `cake`, `codel`, `pie` and `sfq`. The module preserves the driver’s `mq 0:` tree. Enable **Set default Qdisc at boot** and reboot to let the kernel build fresh leaves from the selected default.
 - `net.core.default_qdisc` is one system-wide value. If Wi-Fi and mobile both use driver MQ with different choices, new queues can inherit only the currently selected global default. Check each link’s leaf readback.
-- The kernel dictionary shows 32 live sysctl entries and marks unavailable readings. Bufferbloat uses loaded latency and packet loss for its grade. Compare A/B results from the same network type, test and endpoints.
+- The kernel dictionary shows 32 live sysctl entries and marks unavailable readings. Bufferbloat uses loaded latency and packet loss for its grade. Compare A/B results from the same network type, test and endpoints. Throughput uses KiB/s for byte rates and Mbps for the load test. The TSQ/Lowat readout keeps its existing KB label for 1,024 bytes.
 - To check Private DNS over TCP/853 when automatic DNS uses a local router address, select Cloudflare, Google or AdGuard.
 
 ## Backups and diagnostics

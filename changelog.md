@@ -1,5 +1,14 @@
 # Changelog
 
+## v2.7.0
+
+- Moved route details into the connection card and added compact temperature bars.
+- Grouped Ping, Bufferbloat and DoT in one panel with tabs and added a grade scale and cancel control.
+- Improved keyboard access to app profiles, settings controls and the support address.
+- Extended the Companion push watchdog and added a second HTTP provider for Bufferbloat.
+- Batched debug writes and reduced repeated work in kernel readback and legacy restoration.
+- Separated route observation and Companion peer discovery from their transaction and worker code.
+
 ## v2.6.2
 
 - Fixed diagnostics losing fresh interface flags and MTU, and restored the Android API and conflict details in exported reports.
